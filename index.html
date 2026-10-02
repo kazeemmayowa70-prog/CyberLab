@@ -339,7 +339,7 @@
 
     <input
       type="password"
-      id="passwordInput"
+      id="passwordInput" 
       placeholder="Enter a test password"
       style="
         width: 100%;
@@ -380,34 +380,49 @@
 </body>
 
 <script>
-  function checkPassword() {
+function checkPassword() {
     const password = document.getElementById("passwordInput").value;
     const result = document.getElementById("passwordResult");
 
     if (password.length === 0) {
-      result.textContent = "Enter a fictional test password first.";
-      return;
+        result.textContent = "Enter a fictional test password first.";
+        return;
     }
 
-    let score = 0;
+    const checks = {
+        length: password.length >= 8,
+        uppercase: /[A-Z]/.test(password),
+        lowercase: /[a-z]/.test(password),
+        number: /[0-9]/.test(password),
+        special: /[^A-Za-z0-9]/.test(password)
+    };
 
-    if (password.length >= 8) score++;
-    if (password.length >= 12) score++;
-    if (/[A-Z]/.test(password)) score++;
-    if (/[a-z]/.test(password)) score++;
-    if (/[0-9]/.test(password)) score++;
-    if (/[^A-Za-z0-9]/.test(password)) score++;
+    const passed = Object.values(checks).filter(Boolean).length;
 
-    if (score <= 2) {
-      result.textContent =
-        "⚠️ Weak: try a longer password with more variety.";
-    } else if (score <= 4) {
-      result.textContent =
-        "🟡 Moderate: adding length and variety would improve it.";
+    let level;
+
+    if (passed <= 2) {
+        level = "Weak";
+    } else if (passed <= 4) {
+        level = "Moderate";
     } else {
-      result.textContent =
-        "🟢 Stronger: this sample meets several basic password-security checks.";
+        level = "Strong";
     }
-  }
+
+    result.innerHTML = `
+        <h3>Security Level: ${level}</h3>
+
+        <p>${checks.length ? "✓" : "✗"} Length (8+ characters)</p>
+        <p>${checks.uppercase ? "✓" : "✗"} Uppercase letter</p>
+        <p>${checks.lowercase ? "✓" : "✗"} Lowercase letter</p>
+        <p>${checks.number ? "✓" : "✗"} Number</p>
+        <p>${checks.special ? "✓" : "✗"} Special character</p>
+
+        <p>
+            <strong>Security Note:</strong><br>
+            Never enter a real password into a demonstration tool.
+        </p>
+    `;
+}
 </script>
 </html>
