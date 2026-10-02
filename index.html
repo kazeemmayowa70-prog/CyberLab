@@ -324,6 +324,53 @@
   </div>
 </section>
 
+<section id="password-lab">
+  <h2 class="section-title">Password <span>Security Lab</span></h2>
+
+  <div class="card">
+    <div class="icon">🔐</div>
+
+    <h3>Test a Sample Password</h3>
+
+    <p>
+      Enter a fictional password to learn how password length and
+      complexity affect basic password security.
+    </p>
+
+    <input
+      type="password"
+      id="passwordInput"
+      placeholder="Enter a test password"
+      style="
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        border-radius: 8px;
+        border: 1px solid #31506d;
+        background: #07111f;
+        color: white;
+      "
+    >
+
+    <button
+      onclick="checkPassword()"
+      style="
+        margin-top: 12px;
+        padding: 12px 18px;
+        border: none;
+        border-radius: 8px;
+        background: #38bdf8;
+        cursor: pointer;
+        font-weight: bold;
+      "
+    >
+      Analyze Password
+    </button>
+
+    <p id="passwordResult" style="margin-top: 15px;"></p>
+  </div>
+</section>
+
   </main>
 
   <footer>
@@ -331,4 +378,36 @@
   </footer>
 
 </body>
+
+<script>
+  function checkPassword() {
+    const password = document.getElementById("passwordInput").value;
+    const result = document.getElementById("passwordResult");
+
+    if (password.length === 0) {
+      result.textContent = "Enter a fictional test password first.";
+      return;
+    }
+
+    let score = 0;
+
+    if (password.length >= 8) score++;
+    if (password.length >= 12) score++;
+    if (/[A-Z]/.test(password)) score++;
+    if (/[a-z]/.test(password)) score++;
+    if (/[0-9]/.test(password)) score++;
+    if (/[^A-Za-z0-9]/.test(password)) score++;
+
+    if (score <= 2) {
+      result.textContent =
+        "⚠️ Weak: try a longer password with more variety.";
+    } else if (score <= 4) {
+      result.textContent =
+        "🟡 Moderate: adding length and variety would improve it.";
+    } else {
+      result.textContent =
+        "🟢 Stronger: this sample meets several basic password-security checks.";
+    }
+  }
+</script>
 </html>
