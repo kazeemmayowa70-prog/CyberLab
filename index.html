@@ -533,6 +533,55 @@
     </div>
 </section>
 
+<section id="password-hashing-lab">
+    <h2 class="section-title">
+        Password Hashing <span>Security Lab</span>
+    </h2>
+
+    <div class="card">
+        <div class="icon">🔒</div>
+
+        <h3>Password Hashing Simulation</h3>
+
+        <p>
+            Enter a fictional password to see how hashing
+            transforms password data into a fixed-length value.
+        </p>
+
+        <input
+            type="text"
+            id="hashInput"
+            placeholder="Enter a fictional password"
+            style="
+                width: 100%;
+                padding: 12px;
+                margin-top: 15px;
+                border-radius: 8px;
+                border: 1px solid #31506d;
+                background: #07111f;
+                color: white;
+            "
+        >
+
+        <button
+            onclick="simulateHash()"
+            style="
+                margin-top: 12px;
+                padding: 12px 18px;
+                border: none;
+                border-radius: 8px;
+                background: #38bdf8;
+                cursor: pointer;
+                font-weight: bold;
+            "
+        >
+            Generate Hash
+        </button>
+
+        <div id="hashResult" style="margin-top: 15px;"></div>
+    </div>
+</section>
+
   </main>
 
   <footer>
@@ -694,6 +743,44 @@ function validateInput() {
     `;
 
     result.appendChild(note);
+}
+
+async function simulateHash() {
+    const input = document.getElementById("hashInput").value;
+    const result = document.getElementById("hashResult");
+
+    if (input.trim() === "") {
+        result.textContent = "⚠️ Enter a fictional password first.";
+        return;
+    }
+
+    const encoder = new TextEncoder();
+    const data = encoder.encode(input);
+
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+
+    const hash = hashArray
+        .map(byte => byte.toString(16).padStart(2, "0"))
+        .join("");
+
+    result.innerHTML = `
+        <h3>Password Hash Result</h3>
+
+        <p><strong>Algorithm:</strong> SHA-256</p>
+
+        <p style="word-break: break-all;">
+            <strong>Hash:</strong><br>
+            ${hash}
+        </p>
+
+        <p>
+            <strong>Security Note:</strong><br>
+            Real password systems should use dedicated password-hashing
+            algorithms such as Argon2, bcrypt, or scrypt with proper salting.
+        </p>
+    `;
 }
 </script>
 
