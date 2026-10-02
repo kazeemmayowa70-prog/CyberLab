@@ -484,6 +484,54 @@
   </div>
 </section>
 
+<section id="web-security-lab">
+    <h2 class="section-title">
+        Web Security <span>Security Lab</span>
+    </h2>
+
+    <div class="card">
+        <div class="icon">🛡️</div>
+
+        <h3>Input Validation Lab</h3>
+
+        <p>
+            Enter sample text to see how a web application
+            can safely handle user input.
+        </p>
+
+        <input
+            type="text"
+            id="userInput"
+            placeholder="Enter sample text"
+            style="
+                width: 100%;
+                padding: 12px;
+                margin-top: 15px;
+                border-radius: 8px;
+                border: 1px solid #31506d;
+                background: #07111f;
+                color: white;
+            "
+        >
+
+        <button
+            onclick="validateInput()"
+            style="
+                margin-top: 12px;
+                padding: 12px 18px;
+                border: none;
+                border-radius: 8px;
+                background: #38bdf8;
+                cursor: pointer;
+                font-weight: bold;
+            "
+        >
+            Validate Input
+        </button>
+
+        <div id="inputResult" style="margin-top: 15px;"></div>
+    </div>
+</section>
 
   </main>
 
@@ -616,6 +664,36 @@ function analyzeURL() {
         result.textContent =
             "❌ Invalid URL. Try something like https://example.com:443/login";
     }
+}
+
+function validateInput() {
+    const input = document.getElementById("userInput").value;
+    const result = document.getElementById("inputResult");
+
+    if (input.trim() === "") {
+        result.textContent = "⚠️ Enter some sample text first.";
+        return;
+    }
+
+    const safeOutput = document.createElement("p");
+    safeOutput.textContent = input;
+
+    result.innerHTML = `
+        <h3>Input Validation Result</h3>
+        <p><strong>Status:</strong> Input received safely.</p>
+        <p><strong>Character count:</strong> ${input.length}</p>
+    `;
+
+    result.appendChild(safeOutput);
+
+    const note = document.createElement("p");
+    note.innerHTML = `
+        <strong>Security Note:</strong><br>
+        User input should be validated and safely handled
+        before being displayed or processed.
+    `;
+
+    result.appendChild(note);
 }
 </script>
 
