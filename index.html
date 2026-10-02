@@ -47,6 +47,21 @@
     .logo span {
       color: #38bdf8;
     }
+    
+    .menu {
+      display: flex;
+      gap: 16px;
+    }
+
+    .menu a {
+      color: #a9bdd3;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .menu a:hover {
+      color: #38bdf8;
+    }
 
     .hero {
       max-width: 1100px;
@@ -170,7 +185,11 @@
   <header>
     <div class="nav">
       <div class="logo">🔐 Cyber<span>Lab</span></div>
-      <div>Portfolio</div>
+      <nav class="menu">
+  <a href="#about">About</a>
+  <a href="#labs">Labs</a>
+  <a href="#projects">Projects</a>
+</nav> 
     </div>
   </header>
 
