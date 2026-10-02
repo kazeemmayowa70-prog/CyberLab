@@ -19,7 +19,7 @@ CyberLab is a hands-on project where I document what I learn in cybersecurity an
 
 ## Important note
 
-These labs are learning simulations that run in the browser. They are not real security systems. A real version needs a server, which is my next project.
+These labs are learning simulations that run in the browser. They are not real security systems. The real server-side versions are in my backend project, linked below.
 
 ## Built with
 
@@ -27,3 +27,7 @@ HTML, CSS, JavaScript, Git and GitHub
 
 ## Goal
 .
+
+## Real backend
+
+The labs above are browser simulations. The real versions (server-side login, bcrypt password hashing, JWT tokens, admin-only routes, rate limiting and a SQLite database) are in my backend project: https://github.com/kazeemmayowa70-prog/cyberlab-server
