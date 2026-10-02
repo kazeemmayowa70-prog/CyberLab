@@ -582,6 +582,56 @@
     </div>
 </section>
 
+<section id="access-control-lab">
+    <h2 class="section-title">
+        Access Control <span>Security Lab</span>
+    </h2>
+
+    <div class="card">
+        <div class="icon">🚪</div>
+
+        <h3>Access Control Simulation</h3>
+
+        <p>
+            Pick a role, then try an admin-only action. The system
+            must check your role before allowing it.
+        </p>
+
+        <select
+            id="accessRole"
+            style="
+                width: 100%;
+                padding: 12px;
+                margin-top: 15px;
+                border-radius: 8px;
+                border: 1px solid #31506d;
+                background: #07111f;
+                color: white;
+            "
+        >
+            <option value="user">Regular User</option>
+            <option value="admin">Admin</option>
+        </select>
+
+        <button
+            onclick="tryAdminAction()"
+            style="
+                margin-top: 12px;
+                padding: 12px 18px;
+                border: none;
+                border-radius: 8px;
+                background: #38bdf8;
+                cursor: pointer;
+                font-weight: bold;
+            "
+        >
+            Delete a User (Admin Action)
+        </button>
+
+        <div id="accessResult" style="margin-top: 15px;"></div>
+    </div>
+</section>
+
   </main>
 
   <footer>
@@ -780,6 +830,29 @@ async function simulateHash() {
             Real password systems should use dedicated password-hashing
             algorithms such as Argon2, bcrypt, or scrypt with proper salting.
         </p>
+    `;
+}
+
+function tryAdminAction() {
+    const role = document.getElementById("accessRole").value;
+    const result = document.getElementById("accessResult");
+
+    // The permission check: only admins are allowed
+    const allowedRoles = ["admin"];
+
+    if (!allowedRoles.includes(role)) {
+        result.innerHTML = `
+            <h3>⛔ Access Denied</h3>
+            <p><strong>Role:</strong> ${role}</p>
+            <p>This action requires the admin role.</p>
+        `;
+        return;
+    }
+
+    result.innerHTML = `
+        <h3>✅ Access Granted</h3>
+        <p><strong>Role:</strong> ${role}</p>
+        <p>Admin action allowed (simulation only, nothing was deleted).</p>
     `;
 }
 </script>
