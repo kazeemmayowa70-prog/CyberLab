@@ -371,6 +371,71 @@
   </div>
 </section>
 
+<section id="authentication-lab">
+  <h2 class="section-title">
+    Authentication <span>Security Lab</span>
+  </h2>
+
+  <div class="card">
+    <div class="icon">🔑</div>
+
+    <h3>Login Security Simulation</h3>
+
+    <p>
+      A safe simulation showing how repeated failed login attempts
+      can trigger a temporary account lockout.
+    </p>
+
+    <input
+      type="text"
+      id="loginUsername"
+      placeholder="Test username"
+      style="
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        border-radius: 8px;
+        border: 1px solid #31506d;
+        background: #07111f;
+        color: white;
+      "
+    >
+
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Test password"
+      style="
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        border-radius: 8px;
+        border: 1px solid #31506d;
+        background: #07111f;
+        color: white;
+      "
+    >
+
+    <button
+      onclick="simulateLogin()"
+      style="
+        margin-top: 12px;
+        padding: 12px 18px;
+        border: none;
+        border-radius: 8px;
+        background: #38bdf8;
+        cursor: pointer;
+        font-weight: bold;
+      "
+    >
+      Attempt Login
+    </button>
+
+    <p id="loginResult" style="margin-top: 15px;"></p>
+  </div>
+</section>
+
+
   </main>
 
   <footer>
@@ -424,5 +489,49 @@ function checkPassword() {
         </p>
     `;
 }
+
+let failedLoginAttempts = 0;
+const maxLoginAttempts = 3;
+let accountLocked = false;
+
+function simulateLogin() {
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+    const result = document.getElementById("loginResult");
+
+    if (accountLocked) {
+        result.innerHTML =
+            "🔒 <strong>Account Locked</strong><br>" +
+            "Too many failed login attempts.";
+        return;
+    }
+
+    if (username === "" || password === "") {
+        result.textContent =
+            "⚠️ Enter a test username and password.";
+        return;
+    }
+
+    failedLoginAttempts++;
+
+    if (failedLoginAttempts >= maxLoginAttempts) {
+        accountLocked = true;
+
+        result.innerHTML =
+            "🔒 <strong>Account Locked</strong><br>" +
+            "Too many failed login attempts.<br>" +
+            "This is a security demonstration only.";
+        return;
+    }
+
+    const attemptsLeft = maxLoginAttempts - failedLoginAttempts;
+
+    result.innerHTML =
+        "❌ Login failed — demonstration only.<br>" +
+        "<strong>Attempts remaining:</strong> " +
+        attemptsLeft;
+}
 </script>
+
+}
 </html>
