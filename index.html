@@ -435,6 +435,55 @@
   </div>
 </section>
 
+<section id="networking-lab">
+  <h2 class="section-title">
+    Networking <span>Security Lab</span>
+  </h2>
+
+  <div class="card">
+    <div class="icon">🌐</div>
+
+    <h3>URL & Network Analyzer</h3>
+
+    <p>
+      Enter a sample URL to learn how protocols, domains,
+      ports, and paths are structured.
+    </p>
+
+    <input
+      type="text"
+      id="urlInput"
+      placeholder="https://example.com:443/login"
+      style="
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        border-radius: 8px;
+        border: 1px solid #31506d;
+        background: #07111f;
+        color: white;
+      "
+    >
+
+    <button
+      onclick="analyzeURL()"
+      style="
+        margin-top: 12px;
+        padding: 12px 18px;
+        border: none;
+        border-radius: 8px;
+        background: #38bdf8;
+        cursor: pointer;
+        font-weight: bold;
+      "
+    >
+      Analyze URL
+    </button>
+
+    <div id="urlResult" style="margin-top: 15px;"></div>
+  </div>
+</section>
+
 
   </main>
 
@@ -530,6 +579,43 @@ function simulateLogin() {
         "❌ Login failed — demonstration only.<br>" +
         "<strong>Attempts remaining:</strong> " +
         attemptsLeft;
+}
+
+function analyzeURL() {
+    const input = document.getElementById("urlInput").value.trim();
+    const result = document.getElementById("urlResult");
+
+    if (input === "") {
+        result.textContent = "⚠️ Enter a sample URL first.";
+        return;
+    }
+
+    try {
+        const url = new URL(input);
+
+        const protocol = url.protocol.replace(":", "");
+        const domain = url.hostname;
+        const port = url.port || (protocol === "https" ? "443" : "80");
+        const path = url.pathname || "/";
+
+        result.innerHTML = `
+            <h3>URL Analysis</h3>
+
+            <p><strong>Protocol:</strong> ${protocol}</p>
+            <p><strong>Domain:</strong> ${domain}</p>
+            <p><strong>Port:</strong> ${port}</p>
+            <p><strong>Path:</strong> ${path}</p>
+
+            <p>
+                <strong>Security Note:</strong><br>
+                HTTPS encrypts traffic between the browser and server,
+                but HTTPS alone does not make a website trustworthy.
+            </p>
+        `;
+    } catch (error) {
+        result.textContent =
+            "❌ Invalid URL. Try something like https://example.com:443/login";
+    }
 }
 </script>
 
