@@ -1,880 +1,670 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="description" content="CyberLab is my cybersecurity learning portfolio, featuring practical Linux work, educational security simulations, technical projects, and learning progress.">
+  <meta name="theme-color" content="#07111f">
   <title>CyberLab | Cybersecurity Portfolio</title>
-
-  <meta
-    name="description"
-    content="CyberLab — a personal cybersecurity and web development portfolio."
-  >
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #07111f;
-      color: #e8f1ff;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 20px;
-      border-bottom: 1px solid #1d3047;
-      background: #081625;
-    }
-
-    .nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-
-    .logo span {
-      color: #38bdf8;
-    }
-    
-    .menu {
-      display: flex;
-      gap: 16px;
-    }
-
-    .menu a {
-      color: #a9bdd3;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    .menu a:hover {
-      color: #38bdf8;
-    }
-
-    .hero {
-      max-width: 1100px;
-      margin: auto;
-      padding: 80px 20px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 7px 12px;
-      border: 1px solid #24506d;
-      border-radius: 20px;
-      color: #7dd3fc;
-      font-size: 0.85rem;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 8vw, 5rem);
-      line-height: 1.05;
-      margin-bottom: 20px;
-    }
-
-    h1 span {
-      color: #38bdf8;
-    }
-
-    .hero p {
-      max-width: 650px;
-      color: #a9bdd3;
-      font-size: 1.05rem;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 12px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      text-decoration: none;
-      padding: 12px 18px;
-      border-radius: 8px;
-      font-weight: bold;
-      background: #38bdf8;
-      color: #03111c;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: #dcecff;
-      border: 1px solid #31506d;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 55px 20px;
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 25px;
-    }
-
-    .section-title span {
-      color: #38bdf8;
-    }
-
-    .about {
-      color: #a9bdd3;
-      max-width: 750px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      background: #0b1a2b;
-      border: 1px solid #1d3047;
-      border-radius: 12px;
-      padding: 22px;
-    }
-
-    .card h3 {
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: #9eb2c8;
-      font-size: 0.95rem;
-    }
-
-    .icon {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .goal {
-      background: #0b1a2b;
-      border-left: 4px solid #38bdf8;
-      padding: 25px;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      color: #71869d;
-      border-top: 1px solid #1d3047;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header>
-    <div class="nav">
-      <div class="logo">🔐 Cyber<span>Lab</span></div>
-      <nav class="menu">
-  <a href="#about">About</a>
-  <a href="#labs">Labs</a>
-  <a href="#projects">Projects</a>
-</nav> 
-    </div>
+    <nav aria-label="Main navigation">
+      <a class="logo" href="#home" aria-label="CyberLab home">Cyber<span>Lab</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#labs">Security Labs</a>
+        <a href="#linux-lab">Linux Lab</a>
+        <a href="#goals">My Goals</a>
+      </div>
+    </nav>
   </header>
 
-  <main>
+  <main id="main">
 
-    <section class="hero">
-      <div class="badge">CYBERSECURITY • WEB DEVELOPMENT • LEARNING</div>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <p class="eyebrow">CYBERSECURITY • WEB DEVELOPMENT • LEARNING</p>
+      <h1>Building my future in <span>Cybersecurity.</span></h1>
 
-      <h1>
-        Building my future in
-        <span>Cybersecurity.</span>
-      </h1>
-
-      <p>
-        Welcome to CyberLab — my personal technical portfolio where I
-        document my journey in cybersecurity, web development, networking,
-        Linux and secure software development.
+      <p class="hero-text">
+        I'm developing my cybersecurity skills through hands-on projects,
+        Linux practice, networking fundamentals, programming, and continuous
+        learning. CyberLab documents what I study, build, test, and improve.
       </p>
 
-      <div class="buttons">
-        <a class="button" href="#projects">View My Work</a>
-        <a class="button secondary" href="#about">About CyberLab</a>
+      <div class="hero-actions">
+        <a class="btn" href="#projects">Explore my projects</a>
+        <a class="btn btn-secondary" href="#about">About me</a>
       </div>
+
+      <p class="notice">
+        Learning portfolio: the browser-based labs are educational simulations,
+        not production security systems.
+      </p>
     </section>
 
+    <!-- ABOUT -->
     <section id="about">
-      <h2 class="section-title">About <span>CyberLab</span></h2>
+      <p class="eyebrow">01 / ABOUT</p>
+      <h2>About CyberLab</h2>
 
-      <p class="about">
-        CyberLab is a hands-on project created to document my development
-        as a future cybersecurity professional. Instead of only studying
-        theory, I am building projects, practicing in authorized labs,
-        learning how web applications work, and documenting what I learn.
-      </p>
-    </section>
-
-    <section>
-      <h2 class="section-title">Technical <span>Focus</span></h2>
-
-      <div class="grid">
-
-        <div class="card">
-          <div class="icon">🛡️</div>
-          <h3>Cybersecurity</h3>
-          <p>
-            Web security, authentication, authorization, security testing
-            and defensive security concepts.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🌐</div>
-          <h3>Web Development</h3>
-          <p>
-            Building responsive websites and learning how frontend and
-            backend systems communicate.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🐧</div>
-          <h3>Linux</h3>
-          <p>
-            Command-line skills, system administration and security
-            fundamentals.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🌍</div>
-          <h3>Networking</h3>
-          <p>
-            Learning TCP/IP, DNS, HTTP, TLS and the foundations of
-            network security.
-          </p>
-        </div>
-
+      <div class="card">
+        <p>
+          CyberLab is my personal cybersecurity learning portfolio. I use it
+          to practise technical skills, explore security principles, document
+          what I learn, and demonstrate progress through practical projects.
+        </p>
+        <p>
+          My goal is to develop a strong foundation in computing and
+          cybersecurity and pursue further education in the field.
+        </p>
       </div>
     </section>
 
+    <!-- MY STORY -->
+    <section id="why-cybersecurity">
+      <p class="eyebrow">02 / MY STORY</p>
+      <h2>Why I Chose Cybersecurity</h2>
+
+      <div class="card">
+        <p>
+          My journey into cybersecurity began with curiosity. I was fascinated
+          by the word "hacker" and wondered how hacking worked, how people
+          discovered weaknesses in technology, and how they developed the
+          skills to understand systems deeply.
+        </p>
+
+        <p>
+          My curiosity became more personal when I lost access to an email
+          account after sharing my password with someone. That experience
+          showed me how important digital security is and how much I wanted
+          to understand about protecting accounts and responding to security
+          problems.
+        </p>
+
+        <p>
+          As I began learning, I became interested in how systems work, how
+          security weaknesses occur, and how those weaknesses can be prevented.
+          What began as curiosity gradually became a field I wanted to explore
+          more deeply.
+        </p>
+
+        <p>
+          I am still learning, and I know there is much more to understand.
+          Through CyberLab, I practise what I learn, build educational projects,
+          and document my progress. I want to develop the knowledge and
+          practical skills needed to help make digital systems safer.
+        </p>
+
+        <p>
+          I also hope to build a career in cybersecurity that will help me
+          become financially independent and support myself. I see this field
+          as an opportunity to combine curiosity, continuous learning, and
+          long-term career ambitions.
+        </p>
+
+        <p>
+          <strong>
+            My journey is ongoing, and my curiosity motivates me to keep learning.
+          </strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- ORIGINAL TECHNICAL FOCUS -->
+
+<section id="focus">
+  <p class="eyebrow">03 / TECHNICAL FOCUS</p>
+  <h2>What I'm learning</h2>
+  <p class="section-intro">
+    Building practical skills in cybersecurity, web development,
+    Linux, and networking through hands-on learning.
+  </p>
+
+  <div class="card-grid focus-grid">
+    <article class="card focus-card">
+      <img
+        class="focus-image"
+        src="cybersecurity.jpg"
+        alt="Cybersecurity workstation and security monitoring"
+        loading="lazy"
+      >
+      <div class="focus-card-content">
+        <p class="tag">01 / SECURITY</p>
+        <h3>Cybersecurity</h3>
+        <p>
+          Learning web security, authentication, authorization,
+          security testing, and defensive security concepts.
+        </p>
+      </div>
+    </article>
+
+    <article class="card focus-card">
+      <img
+        class="focus-image"
+        src="web-development.jpg"
+        alt="Web development coding workspace"
+        loading="lazy"
+      >
+      <div class="focus-card-content">
+        <p class="tag">02 / DEVELOPMENT</p>
+        <h3>Web Development</h3>
+        <p>
+          Building responsive websites and learning how frontend
+          interfaces and browser-side code work.
+        </p>
+      </div>
+    </article>
+
+    <article class="card focus-card">
+      <img
+        class="focus-image"
+        src="linux.jpg"
+        alt="Linux command-line terminal"
+        loading="lazy"
+      >
+      <div class="focus-card-content">
+        <p class="tag">03 / SYSTEMS</p>
+        <h3>Linux</h3>
+        <p>
+          Practising command-line skills, file permissions,
+          ownership, user and group information, and system fundamentals.
+        </p>
+      </div>
+    </article>
+
+    <article class="card focus-card">
+      <img
+        class="focus-image"
+        src="networking.jpg"
+        alt="Computer networking equipment"
+        loading="lazy"
+      >
+      <div class="focus-card-content">
+        <p class="tag">04 / NETWORKS</p>
+        <h3>Networking</h3>
+        <p>
+          Studying TCP/IP, DNS, HTTP, TLS, ports, and the
+          foundations of network security.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+    <!-- PROJECTS -->
     <section id="projects">
-      <h2 class="section-title">My <span>Projects</span></h2>
+      <p class="eyebrow">04 / PROJECTS</p>
+      <h2>Projects and practical work</h2>
 
-      <div class="grid">
-
-        <div class="card">
-          <h3>CyberLab</h3>
+      <div class="card-grid">
+        <article class="card">
+          <p class="tag">WEB PROJECT</p>
+          <h3>CyberLab Portfolio</h3>
           <p>
-            This portfolio itself — built to document my cybersecurity
-            and web development journey.
+            A responsive portfolio for presenting cybersecurity learning,
+            interactive demonstrations, and practical documentation.
           </p>
-        </div>
+          <span class="project-status">Personal project</span>
+        </article>
 
-        <div class="card">
-          <h3>Coming Soon</h3>
+        <article class="card">
+          <p class="tag">SECURITY LEARNING</p>
+          <h3>Interactive Security Labs</h3>
           <p>
-            Future cybersecurity and secure web development projects
-            will be documented here.
+            Browser-based demonstrations explaining selected authentication,
+            input validation, URL analysis, hashing, and access-control concepts.
           </p>
-        </div>
+          <span class="project-status">Educational simulations</span>
+        </article>
 
+        <article class="card">
+          <p class="tag">LINUX / DOCUMENTATION</p>
+          <h3>Linux Permissions &amp; Ownership Lab</h3>
+          <p>
+            Hands-on practice interpreting permission modes, testing umask
+            behavior, and verifying file ownership and group metadata in
+            Kali NetHunter.
+          </p>
+          <a href="#linux-lab">View practical evidence</a>
+        </article>
       </div>
     </section>
 
-    <section>
-      <h2 class="section-title">My <span>Goal</span></h2>
-
-      <div class="goal">
-        <p>
-          My long-term goal is to develop strong technical skills in
-          cybersecurity and pursue university-level study in the field.
-          CyberLab will document that journey through real projects,
-          technical learning and practical experience.
-        </p>
-      </div>
-    </section>
-    
-    
+    <!-- SIX INTERACTIVE SECURITY LABS -->
     <section id="labs">
-  <h2 class="section-title">Security <span>Labs</span></h2>
+      <p class="eyebrow">05 / INTERACTIVE LABS</p>
+      <h2>Explore the security demonstrations</h2>
 
-  <div class="grid">
-
-    <div class="card">
-      <div class="icon">🔎</div>
-      <h3>Web Security Fundamentals</h3>
-      <p>
-        Learning how HTTP, authentication, authorization and
-        access control work in modern web applications.
+      <p class="section-intro">
+        Try these local browser demonstrations to explore basic security
+        concepts. Do not enter real passwords or confidential information.
       </p>
-    </div>
 
-    <div class="card">
-      <div class="icon">🔐</div>
-      <h3>Authentication Lab</h3>
-      <p>
-        A safe practice environment for understanding login
-        systems, password hashing and session security.
+      <div class="card-grid">
+
+        <!-- LAB 01: PASSWORD SECURITY -->
+        <article class="card lab-card">
+          <p class="tag">LAB 01 / PASSWORD SECURITY</p>
+          <h3>Password Security Analyzer</h3>
+          <p>
+            Explore password length and character variety using a local
+            demonstration. Use a made-up sample, never your real password.
+          </p>
+
+          <label for="passwordInput">Sample password</label>
+          <input id="passwordInput" type="password" autocomplete="off"
+            maxlength="128" placeholder="Enter a made-up sample">
+
+          <label class="show-password-label">
+            <input id="showPasswordToggle" type="checkbox">
+            Show sample text
+          </label>
+
+          <button id="checkPasswordBtn" type="button">Analyze password</button>
+
+          <div class="lab-panel" aria-live="polite">
+            <h4>Analysis results</h4>
+            <p id="passwordSummary">Enter a sample to begin.</p>
+
+            <div class="meter" role="progressbar"
+              aria-label="Basic password characteristics"
+              aria-valuemin="0" aria-valuemax="5"
+              aria-valuenow="0" id="passwordMeter">
+              <div class="meter-fill" id="passwordMeterFill"></div>
+            </div>
+
+            <p id="passwordMeterLabel">Characteristics: not assessed</p>
+            <div id="passwordChecks"></div>
+          </div>
+
+          <div class="lab-panel">
+            <h4>How to improve</h4>
+            <ul>
+              <li>Use a long, unique passphrase.</li>
+              <li>Avoid names, birthdays, and predictable patterns.</li>
+              <li>Never reuse a password across important accounts.</li>
+              <li>Use a password manager and enable multifactor authentication.</li>
+            </ul>
+          </div>
+
+          <p class="lab-explanation">
+            Learning note: this analyzer checks length and character variety
+            only. It does not check password breaches, guessability, or
+            real-world strength. The analysis runs in your browser.
+          </p>
+        </article>
+
+        <!-- LAB 02: AUTHENTICATION -->
+        <article class="card lab-card">
+          <p class="tag">LAB 02 / AUTHENTICATION</p>
+          <h3>Authentication Security Simulator</h3>
+          <p>
+            Explore login success, failed attempts, and temporary lockout
+            behavior. This is a local demonstration, not a real login system.
+          </p>
+
+          <div class="lab-panel">
+            <h4>Demo credentials</h4>
+            <p>Username: <code>student</code></p>
+            <p>Password: <code>CyberLab123!</code></p>
+            <p class="small-note">These credentials are public examples, not secrets.</p>
+          </div>
+
+          <label for="loginUsername">Demo username</label>
+          <input id="loginUsername" autocomplete="off"
+            placeholder="Enter demo username">
+
+          <label for="loginPassword">Demo password</label>
+          <input id="loginPassword" type="password" autocomplete="off"
+            placeholder="Enter demo password">
+
+          <button id="simulateLoginBtn" type="button">Attempt login</button>
+          <button id="resetLoginBtn" class="btn-secondary" type="button">
+            Reset simulation
+          </button>
+
+          <div class="lab-panel" aria-live="polite">
+            <h4>Authentication status</h4>
+            <p id="loginResult">Waiting for a login attempt.</p>
+
+            <div class="test-row">
+              <span>Failed attempts</span>
+              <strong id="loginAttempts">0 / 3</strong>
+            </div>
+
+            <div class="test-row">
+              <span>Account state</span>
+              <strong id="loginState">Ready</strong>
+            </div>
+          </div>
+
+          <div class="lab-panel">
+            <h4>Event log</h4>
+            <div id="loginEventLog" aria-live="polite">
+              <p>No events yet.</p>
+            </div>
+          </div>
+
+          <p class="lab-explanation">
+            Security lesson: real authentication systems need server-side
+            rate limiting, secure password hashing, session protection, and
+            monitoring. This browser-only lockout can be bypassed and does
+            not protect an account.
+          </p>
+        </article>
+
+        <!-- LAB 03: URL ANALYSIS -->
+        <article class="card lab-card">
+          <p class="tag">LAB 03 / WEB SECURITY</p>
+          <h3>URL Security Analyzer</h3>
+          <p>
+            Inspect a URL's structure and identify patterns that deserve
+            attention. This tool does not visit the address or prove whether
+            a site is malicious.
+          </p>
+
+          <label for="urlInput">URL to inspect</label>
+          <input id="urlInput" type="text" maxlength="2048"
+            autocomplete="off" spellcheck="false"
+            placeholder="https://example.com/login">
+
+          <button id="analyzeUrlBtn" type="button">Analyze URL</button>
+
+          <div class="lab-panel" aria-live="polite">
+            <h4>Assessment</h4>
+            <p id="urlRiskLevel">Waiting for a URL.</p>
+
+            <div id="urlRiskMeter" class="meter" role="progressbar"
+              aria-label="URL warning indicators"
+              aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+              <div id="urlRiskFill" class="meter-fill"></div>
+            </div>
+
+            <p id="urlRiskSummary">Enter a URL to begin.</p>
+          </div>
+
+          <div class="lab-panel">
+            <h4>URL components</h4>
+            <div id="urlDetails"><p>URL details will appear here.</p></div>
+          </div>
+
+          <div class="lab-panel">
+            <h4>Findings</h4>
+            <div id="urlFindings"><p>No analysis has been run.</p></div>
+          </div>
+
+          <p class="lab-explanation">
+            Learning note: HTTPS encrypts a connection but does not guarantee
+            that a site is trustworthy. Automated indicators can produce false
+            positives and cannot replace careful investigation.
+          </p>
+        </article>
+
+        <!-- LAB 04: INPUT VALIDATION -->
+        <article class="card lab-card">
+          <p class="tag">LAB 04 / INPUT SECURITY</p>
+          <h3>Input Validation Tester</h3>
+          <p>Test how an allowlist-based rule accepts or rejects sample input.</p>
+
+          <label for="userInput">Enter sample input</label>
+          <input id="userInput" type="text" maxlength="500"
+            autocomplete="off" placeholder="Try: student_123">
+
+          <button id="validateInputBtn" type="button">Validate input</button>
+
+          <div class="lab-panel" aria-live="polite">
+            <h4>Validation result</h4>
+            <p id="inputResult">Enter a sample and run the test.</p>
+          </div>
+
+          <div class="lab-panel">
+            <h4>Validation rule</h4>
+            <p>
+              This demo accepts 1–100 characters containing only letters,
+              numbers, spaces, underscores, or hyphens.
+            </p>
+            <p>
+              Examples: <code>student_123</code> passes;
+              <code>admin!</code> fails because of the exclamation mark.
+            </p>
+          </div>
+
+          <p class="lab-explanation">
+            Learning note: validation rules depend on the application's needs.
+            Browser-side validation improves usability but must not replace
+            server-side validation or context-appropriate output encoding.
+          </p>
+        </article>
+
+        <!-- LAB 05: SHA-256 -->
+        <article class="card lab-card">
+          <p class="tag">LAB 05 / CRYPTOGRAPHY</p>
+          <h3>SHA-256 Hash Demonstrator</h3>
+          <p>
+            Generate a SHA-256 digest for sample text using your browser.
+            The input is processed locally by this demo.
+          </p>
+
+          <label for="hashInput">Sample text</label>
+          <input id="hashInput" type="text" maxlength="10000"
+            autocomplete="off" placeholder="Enter text to hash">
+
+          <button id="hashBtn" type="button">Generate SHA-256</button>
+
+          <div class="lab-panel" aria-live="polite">
+            <h4>SHA-256 digest</h4>
+            <p id="hashResult">Your digest will appear here.</p>
+          </div>
+
+          <div class="lab-panel">
+            <h4>What to observe</h4>
+            <p>
+              The same input produces the same digest. A small change to the
+              input produces a different digest. SHA-256 produces a 256-bit
+              digest, usually displayed as 64 hexadecimal characters.
+            </p>
+            <p>
+              Hashing is one-way in design; it is not encryption and does not
+              have a decryption key.
+            </p>
+          </div>
+
+          <p class="lab-explanation">
+            Security note: never use a fast general-purpose hash like SHA-256
+            alone to store real user passwords. Password storage should use
+            a dedicated password-hashing algorithm such as Argon2id, scrypt,
+            or appropriately configured bcrypt.
+          </p>
+        </article>
+
+        <!-- LAB 06: ACCESS CONTROL -->
+        <article class="card lab-card">
+          <p class="tag">LAB 06 / ACCESS CONTROL</p>
+          <h3>Role-Based Access Control</h3>
+          <p>
+            Select a simulated user role and test whether that role is
+            allowed to perform a privileged action.
+          </p>
+
+          <label for="accessRole">Choose a simulated role</label>
+          <select id="accessRole">
+            <option value="guest">Guest</option>
+            <option value="user">Standard User</option>
+            <option value="analyst">Security Analyst</option>
+            <option value="admin">Administrator</option>
+          </select>
+
+          <button id="tryAdminBtn" type="button">
+            Attempt privileged action
+          </button>
+
+          <div class="lab-panel" aria-live="polite">
+            <h4>Access decision</h4>
+            <p id="accessResult">Choose a role and attempt the action.</p>
+          </div>
+
+          <div class="lab-panel">
+            <h4>Demo permissions</h4>
+            <div class="test-row"><span>Guest</span><span>Denied</span></div>
+            <div class="test-row"><span>Standard User</span><span>Denied</span></div>
+            <div class="test-row"><span>Security Analyst</span><span>Denied</span></div>
+            <div class="test-row"><span>Administrator</span><span>Allowed</span></div>
+          </div>
+
+          <p class="lab-explanation">
+            Learning note: this is a browser-only simulation, not real
+            authentication or authorization. Production applications must
+            enforce permissions on the server for every protected action.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LINUX LAB -->
+    <section id="linux-lab">
+      <p class="eyebrow">06 / HANDS-ON LINUX</p>
+      <h2>Linux Permissions &amp; Ownership Lab</h2>
+
+      <p class="section-intro">
+        Practical Linux exercises completed in my Kali NetHunter environment
+        using Termux on Android.
       </p>
-    </div>
 
-    <div class="card">
-      <div class="icon">🌐</div>
-      <h3>Networking Lab</h3>
-      <p>
-        Practicing DNS, TCP/IP, HTTP and TLS concepts using
-        authorized learning environments.
-      </p>
-    </div>
+      <div class="card-grid">
+        <article class="card">
+          <h3>1. File Permissions</h3>
+          <p>
+            Practised reading and interpreting Linux permission modes using
+            <code>chmod</code>, <code>ls -l</code>, and <code>stat</code>.
+          </p>
+          <ul>
+            <li><code>640</code> — owner can read and write; group can read.</li>
+            <li><code>660</code> — owner and group can read and write.</li>
+            <li><code>700</code> — only the owner has permissions.</li>
+            <li><code>770</code> — owner and group have full permissions.</li>
+          </ul>
+        </article>
 
-  </div>
-</section>
+        <article class="card">
+          <h3>2. Directory Permissions</h3>
+          <p>
+            Explored how directory permissions control listing names,
+            creating entries, and accessing known paths.
+          </p>
+          <p>
+            Mode <code>711</code> gives the owner full access while group
+            members and others have execute/search permission only.
+          </p>
+        </article>
 
-<section id="password-lab">
-  <h2 class="section-title">Password <span>Security Lab</span></h2>
+        <article class="card">
+          <h3>3. Umask Experiments</h3>
+          <p>
+            Tested how umask affects permissions assigned to newly created
+            files and directories.
+          </p>
+          <ul>
+            <li><code>umask 0007</code>: observed file mode <code>660</code>.</li>
+            <li><code>umask 0027</code>: observed file mode <code>640</code>.</li>
+          </ul>
+          <p>These results depend on the permissions requested by the creating program.</p>
+        </article>
 
-  <div class="card">
-    <div class="icon">🔐</div>
+        <article class="card">
+          <h3>4. Ownership &amp; Groups</h3>
+          <p>
+            Practised checking file ownership with <code>stat</code> and
+            changing group ownership with <code>chgrp</code>.
+          </p>
+          <p>
+            Verified that <code>ownership-test.txt</code> had owner
+            <code>kali</code>, group <code>sockets</code>, and mode
+            <code>660</code> after the group change.
+          </p>
+        </article>
+      </div>
 
-    <h3>Test a Sample Password</h3>
-
-    <p>
-      Enter a fictional password to learn how password length and
-      complexity affect basic password security.
-    </p>
-
-    <input
-      type="password"
-      id="passwordInput" 
-      placeholder="Enter a test password"
-      style="
-        width: 100%;
-        padding: 12px;
-        margin-top: 15px;
-        border-radius: 8px;
-        border: 1px solid #31506d;
-        background: #07111f;
-        color: white;
-      "
-    >
-
-    <button
-      onclick="checkPassword()"
-      style="
-        margin-top: 12px;
-        padding: 12px 18px;
-        border: none;
-        border-radius: 8px;
-        background: #38bdf8;
-        cursor: pointer;
-        font-weight: bold;
-      "
-    >
-      Analyze Password
-    </button>
-
-    <p id="passwordResult" style="margin-top: 15px;"></p>
-  </div>
-</section>
-
-<section id="authentication-lab">
-  <h2 class="section-title">
-    Authentication <span>Security Lab</span>
-  </h2>
-
-  <div class="card">
-    <div class="icon">🔑</div>
-
-    <h3>Login Security Simulation</h3>
-
-    <p>
-      A safe simulation showing how repeated failed login attempts
-      can trigger a temporary account lockout.
-    </p>
-
-    <input
-      type="text"
-      id="loginUsername"
-      placeholder="Test username"
-      style="
-        width: 100%;
-        padding: 12px;
-        margin-top: 15px;
-        border-radius: 8px;
-        border: 1px solid #31506d;
-        background: #07111f;
-        color: white;
-      "
-    >
-
-    <input
-      type="password"
-      id="loginPassword"
-      placeholder="Test password"
-      style="
-        width: 100%;
-        padding: 12px;
-        margin-top: 10px;
-        border-radius: 8px;
-        border: 1px solid #31506d;
-        background: #07111f;
-        color: white;
-      "
-    >
-
-    <button
-      onclick="simulateLogin()"
-      style="
-        margin-top: 12px;
-        padding: 12px 18px;
-        border: none;
-        border-radius: 8px;
-        background: #38bdf8;
-        cursor: pointer;
-        font-weight: bold;
-      "
-    >
-      Attempt Login
-    </button>
-
-    <p id="loginResult" style="margin-top: 15px;"></p>
-  </div>
-</section>
-
-<section id="networking-lab">
-  <h2 class="section-title">
-    Networking <span>Security Lab</span>
-  </h2>
-
-  <div class="card">
-    <div class="icon">🌐</div>
-
-    <h3>URL & Network Analyzer</h3>
-
-    <p>
-      Enter a sample URL to learn how protocols, domains,
-      ports, and paths are structured.
-    </p>
-
-    <input
-      type="text"
-      id="urlInput"
-      placeholder="https://example.com:443/login"
-      style="
-        width: 100%;
-        padding: 12px;
-        margin-top: 15px;
-        border-radius: 8px;
-        border: 1px solid #31506d;
-        background: #07111f;
-        color: white;
-      "
-    >
-
-    <button
-      onclick="analyzeURL()"
-      style="
-        margin-top: 12px;
-        padding: 12px 18px;
-        border: none;
-        border-radius: 8px;
-        background: #38bdf8;
-        cursor: pointer;
-        font-weight: bold;
-      "
-    >
-      Analyze URL
-    </button>
-
-    <div id="urlResult" style="margin-top: 15px;"></div>
-  </div>
-</section>
-
-<section id="web-security-lab">
-    <h2 class="section-title">
-        Web Security <span>Security Lab</span>
-    </h2>
-
-    <div class="card">
-        <div class="icon">🛡️</div>
-
-        <h3>Input Validation Lab</h3>
-
+      <div class="card">
+        <h3>Commands Practised</h3>
         <p>
-            Enter sample text to see how a web application
-            can safely handle user input.
+          <code>ls -l</code>, <code>stat</code>, <code>chmod</code>,
+          <code>umask</code>, <code>chgrp</code>, <code>id</code>,
+          <code>getent group</code>, <code>mkdir</code>, <code>touch</code>,
+          and <code>printf</code>.
+        </p>
+        <p>
+          <strong>Learning outcome:</strong> I practised interpreting
+          permission bits, examining user and group information, and verifying
+          file metadata through terminal commands.
+        </p>
+        <p>
+          <strong>Environment:</strong> Kali NetHunter on Android. This is a
+          personal educational lab, not a production security audit.
+        </p>
+      </div>
+
+      <!-- REAL TERMINAL EVIDENCE -->
+      <div class="card">
+        <h3>Practical Linux Evidence</h3>
+        <p>
+          Terminal evidence from my Kali NetHunter environment on Android.
+          The screenshot documents permission modes, directory access,
+          umask experiments, and group ownership checks.
         </p>
 
-        <input
-            type="text"
-            id="userInput"
-            placeholder="Enter sample text"
-            style="
-                width: 100%;
-                padding: 12px;
-                margin-top: 15px;
-                border-radius: 8px;
-                border: 1px solid #31506d;
-                background: #07111f;
-                color: white;
-            "
-        >
+        <figure>
+          <img
+            src="linux-evidence-clean.png"
+            alt="Kali NetHunter terminal showing Linux permission modes and file ownership results"
+            style="display: block; width: 100%; max-width: 800px; height: auto; border-radius: 12px; margin: 0 auto;"
+            loading="lazy"
+          >
+          <figcaption class="muted">
+            Practical evidence: inspecting file permissions and verifying
+            group ownership with Linux terminal commands.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <button
-            onclick="validateInput()"
-            style="
-                margin-top: 12px;
-                padding: 12px 18px;
-                border: none;
-                border-radius: 8px;
-                background: #38bdf8;
-                cursor: pointer;
-                font-weight: bold;
-            "
-        >
-            Validate Input
-        </button>
+    <!-- GOALS -->
+    <section id="goals">
+      <p class="eyebrow">07 / THE ROAD AHEAD</p>
+      <h2>My learning goals</h2>
 
-        <div id="inputResult" style="margin-top: 15px;"></div>
-    </div>
-</section>
+      <div class="card">
+        <ul>
+          <li>Strengthen my programming and computer science fundamentals.</li>
+          <li>Build practical projects and document how they work.</li>
+          <li>Study secure development and responsible security testing.</li>
+          <li>Develop deeper Linux, networking, and system security skills.</li>
+          <li>Prepare for undergraduate study and future opportunities in cybersecurity.</li>
+        </ul>
 
-<section id="password-hashing-lab">
-    <h2 class="section-title">
-        Password Hashing <span>Security Lab</span>
-    </h2>
-
-    <div class="card">
-        <div class="icon">🔒</div>
-
-        <h3>Password Hashing Simulation</h3>
-
-        <p>
-            Enter a fictional password to see how hashing
-            transforms password data into a fixed-length value.
+        <p class="muted">
+          This portfolio will grow as I complete projects and develop new skills.
         </p>
-
-        <input
-            type="text"
-            id="hashInput"
-            placeholder="Enter a fictional password"
-            style="
-                width: 100%;
-                padding: 12px;
-                margin-top: 15px;
-                border-radius: 8px;
-                border: 1px solid #31506d;
-                background: #07111f;
-                color: white;
-            "
-        >
-
-        <button
-            onclick="simulateHash()"
-            style="
-                margin-top: 12px;
-                padding: 12px 18px;
-                border: none;
-                border-radius: 8px;
-                background: #38bdf8;
-                cursor: pointer;
-                font-weight: bold;
-            "
-        >
-            Generate Hash
-        </button>
-
-        <div id="hashResult" style="margin-top: 15px;"></div>
-    </div>
-</section>
-
-<section id="access-control-lab">
-    <h2 class="section-title">
-        Access Control <span>Security Lab</span>
-    </h2>
-
-    <div class="card">
-        <div class="icon">🚪</div>
-
-        <h3>Access Control Simulation</h3>
-
-        <p>
-            Pick a role, then try an admin-only action. The system
-            must check your role before allowing it.
-        </p>
-
-        <select
-            id="accessRole"
-            style="
-                width: 100%;
-                padding: 12px;
-                margin-top: 15px;
-                border-radius: 8px;
-                border: 1px solid #31506d;
-                background: #07111f;
-                color: white;
-            "
-        >
-            <option value="user">Regular User</option>
-            <option value="admin">Admin</option>
-        </select>
-
-        <button
-            onclick="tryAdminAction()"
-            style="
-                margin-top: 12px;
-                padding: 12px 18px;
-                border: none;
-                border-radius: 8px;
-                background: #38bdf8;
-                cursor: pointer;
-                font-weight: bold;
-            "
-        >
-            Delete a User (Admin Action)
-        </button>
-
-        <div id="accessResult" style="margin-top: 15px;"></div>
-    </div>
-</section>
+      </div>
+    </section>
 
   </main>
 
   <footer>
-    <p>© 2026 CyberLab. Built as a personal learning portfolio.</p>
+    <p>CyberLab — a personal cybersecurity learning portfolio.</p>
+    <p class="muted">
+      Built for learning, experimentation, and responsible security practice.
+    </p>
   </footer>
-
 </body>
-
-<script>
-function checkPassword() {
-    const password = document.getElementById("passwordInput").value;
-    const result = document.getElementById("passwordResult");
-
-    if (password.length === 0) {
-        result.textContent = "Enter a fictional test password first.";
-        return;
-    }
-
-    const checks = {
-        length: password.length >= 8,
-        uppercase: /[A-Z]/.test(password),
-        lowercase: /[a-z]/.test(password),
-        number: /[0-9]/.test(password),
-        special: /[^A-Za-z0-9]/.test(password)
-    };
-
-    const passed = Object.values(checks).filter(Boolean).length;
-
-    let level;
-
-    if (passed <= 2) {
-        level = "Weak";
-    } else if (passed <= 4) {
-        level = "Moderate";
-    } else {
-        level = "Strong";
-    }
-
-    result.innerHTML = `
-        <h3>Security Level: ${level}</h3>
-
-        <p>${checks.length ? "✓" : "✗"} Length (8+ characters)</p>
-        <p>${checks.uppercase ? "✓" : "✗"} Uppercase letter</p>
-        <p>${checks.lowercase ? "✓" : "✗"} Lowercase letter</p>
-        <p>${checks.number ? "✓" : "✗"} Number</p>
-        <p>${checks.special ? "✓" : "✗"} Special character</p>
-
-        <p>
-            <strong>Security Note:</strong><br>
-            Never enter a real password into a demonstration tool.
-        </p>
-    `;
-}
-
-let failedLoginAttempts = 0;
-const maxLoginAttempts = 3;
-let accountLocked = false;
-
-function simulateLogin() {
-    const username = document.getElementById("loginUsername").value;
-    const password = document.getElementById("loginPassword").value;
-    const result = document.getElementById("loginResult");
-
-    if (accountLocked) {
-        result.innerHTML =
-            "🔒 <strong>Account Locked</strong><br>" +
-            "Too many failed login attempts.";
-        return;
-    }
-
-    if (username === "" || password === "") {
-        result.textContent =
-            "⚠️ Enter a test username and password.";
-        return;
-    }
-
-    failedLoginAttempts++;
-
-    if (failedLoginAttempts >= maxLoginAttempts) {
-        accountLocked = true;
-
-        result.innerHTML =
-            "🔒 <strong>Account Locked</strong><br>" +
-            "Too many failed login attempts.<br>" +
-            "This is a security demonstration only.";
-        return;
-    }
-
-    const attemptsLeft = maxLoginAttempts - failedLoginAttempts;
-
-    result.innerHTML =
-        "❌ Login failed — demonstration only.<br>" +
-        "<strong>Attempts remaining:</strong> " +
-        attemptsLeft;
-}
-
-function analyzeURL() {
-    const input = document.getElementById("urlInput").value.trim();
-    const result = document.getElementById("urlResult");
-
-    if (input === "") {
-        result.textContent = "⚠️ Enter a sample URL first.";
-        return;
-    }
-
-    try {
-        const url = new URL(input);
-
-        const protocol = url.protocol.replace(":", "");
-        const domain = url.hostname;
-        const port = url.port || (protocol === "https" ? "443" : "80");
-        const path = url.pathname || "/";
-
-        result.innerHTML = `
-            <h3>URL Analysis</h3>
-
-            <p><strong>Protocol:</strong> ${protocol}</p>
-            <p><strong>Domain:</strong> ${domain}</p>
-            <p><strong>Port:</strong> ${port}</p>
-            <p><strong>Path:</strong> ${path}</p>
-
-            <p>
-                <strong>Security Note:</strong><br>
-                HTTPS encrypts traffic between the browser and server,
-                but HTTPS alone does not make a website trustworthy.
-            </p>
-        `;
-    } catch (error) {
-        result.textContent =
-            "❌ Invalid URL. Try something like https://example.com:443/login";
-    }
-}
-
-function validateInput() {
-    const input = document.getElementById("userInput").value;
-    const result = document.getElementById("inputResult");
-
-    if (input.trim() === "") {
-        result.textContent = "⚠️ Enter some sample text first.";
-        return;
-    }
-
-    const safeOutput = document.createElement("p");
-    safeOutput.textContent = input;
-
-    result.innerHTML = `
-        <h3>Input Validation Result</h3>
-        <p><strong>Status:</strong> Input received safely.</p>
-        <p><strong>Character count:</strong> ${input.length}</p>
-    `;
-
-    result.appendChild(safeOutput);
-
-    const note = document.createElement("p");
-    note.innerHTML = `
-        <strong>Security Note:</strong><br>
-        User input should be validated and safely handled
-        before being displayed or processed.
-    `;
-
-    result.appendChild(note);
-}
-
-async function simulateHash() {
-    const input = document.getElementById("hashInput").value;
-    const result = document.getElementById("hashResult");
-
-    if (input.trim() === "") {
-        result.textContent = "⚠️ Enter a fictional password first.";
-        return;
-    }
-
-    const encoder = new TextEncoder();
-    const data = encoder.encode(input);
-
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-
-    const hash = hashArray
-        .map(byte => byte.toString(16).padStart(2, "0"))
-        .join("");
-
-    result.innerHTML = `
-        <h3>Password Hash Result</h3>
-
-        <p><strong>Algorithm:</strong> SHA-256</p>
-
-        <p style="word-break: break-all;">
-            <strong>Hash:</strong><br>
-            ${hash}
-        </p>
-
-        <p>
-            <strong>Security Note:</strong><br>
-            Real password systems should use dedicated password-hashing
-            algorithms such as Argon2, bcrypt, or scrypt with proper salting.
-        </p>
-    `;
-}
-
-function tryAdminAction() {
-    const role = document.getElementById("accessRole").value;
-    const result = document.getElementById("accessResult");
-
-    // The permission check: only admins are allowed
-    const allowedRoles = ["admin"];
-
-    if (!allowedRoles.includes(role)) {
-        result.innerHTML = `
-            <h3>⛔ Access Denied</h3>
-            <p><strong>Role:</strong> ${role}</p>
-            <p>This action requires the admin role.</p>
-        `;
-        return;
-    }
-
-    result.innerHTML = `
-        <h3>✅ Access Granted</h3>
-        <p><strong>Role:</strong> ${role}</p>
-        <p>Admin action allowed (simulation only, nothing was deleted).</p>
-    `;
-}
-</script>
-
-
 </html>
