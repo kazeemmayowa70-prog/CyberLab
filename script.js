@@ -571,3 +571,87 @@ if (document.readyState === "loading") {
 } else {
   initializeCyberLab();
 }
+
+// Floating Back to Top button
+function initializeBackToTop() {
+    const button = document.getElementById("backToTop");
+    if (!button || button.dataset.initialized === "true") return;
+
+    button.dataset.initialized = "true";
+
+    const updateButton = () => {
+        const scrollPosition = Math.max(
+            window.scrollY || 0,
+            document.documentElement.scrollTop || 0,
+            document.body.scrollTop || 0
+        );
+
+        button.classList.toggle("visible", scrollPosition > 300);
+    };
+
+    window.addEventListener("scroll", updateButton, { passive: true });
+
+    button.addEventListener("click", () => {
+        const reduceMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        window.scrollTo({
+            top: 0,
+            behavior: reduceMotion ? "auto" : "smooth"
+        });
+    });
+
+    updateButton();
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeBackToTop);
+} else {
+    initializeBackToTop();
+}
+
+
+
+
+// Accessible mobile navigation
+(() => {
+    const button = document.getElementById("menuToggle");
+    const menu = document.getElementById("mainNavLinks");
+
+    if (!button || !menu || button.dataset.initialized === "true") return;
+    button.dataset.initialized = "true";
+
+    const closeMenu = () => {
+        menu.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Open navigation menu");
+    };
+
+    button.addEventListener("click", () => {
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+            menu.classList.add("open");
+            button.setAttribute("aria-expanded", "true");
+            button.setAttribute("aria-label", "Close navigation menu");
+        }
+    });
+
+    menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeMenu();
+            button.focus();
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 680) closeMenu();
+    });
+})();

@@ -15,9 +15,14 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header>
-    <nav aria-label="Main navigation">
+    <nav class="main-nav" aria-label="Main navigation">
       <a class="logo" href="#home" aria-label="CyberLab home">Cyber<span>Lab</span></a>
-      <div class="nav-links">
+      <button class="menu-toggle" id="menuToggle"
+              type="button" aria-controls="mainNavLinks"
+              aria-expanded="false" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="mainNavLinks">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#labs">Security Labs</a>
@@ -30,8 +35,9 @@
   <main id="main">
 
     <!-- HERO -->
-    <section class="hero" id="home">
-      <p class="eyebrow">CYBERSECURITY • WEB DEVELOPMENT • LEARNING</p>
+    <section class="hero hero-profile" id="home">
+  <div class="hero-content">
+  <p class="eyebrow">CYBERSECURITY • WEB DEVELOPMENT • LEARNING</p>
       <h1>Building my future in <span>Cybersecurity.</span></h1>
 
       <p class="hero-text">
@@ -49,6 +55,21 @@
         Learning portfolio: the browser-based labs are educational simulations,
         not production security systems.
       </p>
+
+  </div>
+
+  <div class="hero-photo-wrap">
+    <img
+      class="hero-photo"
+      src="profile.png"
+      alt="Portrait of the creator of CyberLab"
+      width="420"
+      height="560"
+      fetchpriority="high"
+    >
+    <p class="hero-photo-caption">The person behind CyberLab</p>
+  </div>
+
     </section>
 
     <!-- ABOUT -->
@@ -205,37 +226,69 @@
     <section id="projects">
       <p class="eyebrow">04 / PROJECTS</p>
       <h2>Projects and practical work</h2>
+      <p class="section-intro">
+        Projects documenting my progress in web development, cybersecurity
+        fundamentals, and Linux. Each entry distinguishes working features
+        from ongoing learning.
+      </p>
 
       <div class="card-grid">
         <article class="card">
-          <p class="tag">WEB PROJECT</p>
+          <p class="tag">FEATURED / WEB DEVELOPMENT</p>
           <h3>CyberLab Portfolio</h3>
           <p>
-            A responsive portfolio for presenting cybersecurity learning,
-            interactive demonstrations, and practical documentation.
+            A personal portfolio built to document my cybersecurity learning,
+            demonstrate web-development skills, and present practical work in
+            one place.
           </p>
-          <span class="project-status">Personal project</span>
+          <ul class="project-details">
+            <li>Responsive HTML and CSS layout</li>
+            <li>JavaScript interactions and navigation</li>
+            <li>Project and learning documentation</li>
+          </ul>
+          <span class="project-status">Active personal project</span>
+          <div class="project-links">
+            <a href="https://github.com/kazeemmayowa70-prog/CyberLab"
+               target="_blank" rel="noopener noreferrer">View source on GitHub</a>
+          </div>
         </article>
 
         <article class="card">
-          <p class="tag">SECURITY LEARNING</p>
+          <p class="tag">WEB SECURITY / EDUCATION</p>
           <h3>Interactive Security Labs</h3>
           <p>
-            Browser-based demonstrations explaining selected authentication,
-            input validation, URL analysis, hashing, and access-control concepts.
+            Browser-based educational simulations for exploring password
+            characteristics, login protections, input validation, URL
+            structure, hashing concepts, and access control.
           </p>
+          <ul class="project-details">
+            <li>Interactive practice in the browser</li>
+            <li>Explanations of security concepts</li>
+            <li>Designed for learning, not production use</li>
+          </ul>
           <span class="project-status">Educational simulations</span>
+          <div class="project-links">
+            <a href="#labs">Explore the labs</a>
+          </div>
         </article>
 
         <article class="card">
-          <p class="tag">LINUX / DOCUMENTATION</p>
+          <p class="tag">LINUX / HANDS-ON LEARNING</p>
           <h3>Linux Permissions &amp; Ownership Lab</h3>
           <p>
-            Hands-on practice interpreting permission modes, testing umask
-            behavior, and verifying file ownership and group metadata in
-            Kali NetHunter.
+            Practical work exploring Linux permission modes, umask behavior,
+            file ownership, and group metadata in my Kali NetHunter
+            environment.
           </p>
-          <a href="#linux-lab">View practical evidence</a>
+          <ul class="project-details">
+            <li>Command-line investigation</li>
+            <li>Permission and ownership checks</li>
+            <li>Evidence and explanations of results</li>
+          </ul>
+          <span class="project-status">Learning and documentation</span>
+          <div class="project-links">
+            <a href="#linux-lab">View practical evidence</a>
+          </div>
         </article>
       </div>
     </section>
@@ -667,4 +720,8 @@
     </p>
   </footer>
 </body>
+<button id="backToTop" class="back-to-top"
+        type="button" aria-label="Back to top"
+        title="Back to top">↑</button>
+
 </html>
